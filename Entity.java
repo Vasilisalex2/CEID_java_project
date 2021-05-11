@@ -23,4 +23,10 @@ public abstract class Entity{
     {
         return this.getInfo() + "" + this.getDetails();
     }
+    public int getID(){
+    return this.id;
+    }
+    public String getName(){
+    return this.name;
+    }
 }
