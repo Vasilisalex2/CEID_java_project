@@ -1,0 +1,58 @@
+public class Requests extends RequestDonationList
+{
+    public void add(Beneficiary beneficiary,RequestDonation request){
+    if(OQuanityTest(request)==true && validRequestDonation(beneficiary,request)==true){
+    super.add(request);
+    }
+    }
+    public void modify(Beneficiary beneficiary,RequestDonation request, int newQuantity){
+    if(OQuanityTest(request)==true && validRequestDonation(beneficiary,request)==true){
+    super.modify(request,newQuantity);
+    }
+    }
+    public void commit(Beneficiary beneficiary){
+    for(RequestDonation thisRD : rdEntities){
+        if(OQuanityTest(thisRD)==true && validRequestDonation(beneficiary,thisRD)==true){
+        //afaireitai apo tin currentDonations
+        super.remove(thisRD);
+        //add stin receivedList tou beneficiary
+        }
+    }
+    }
+    public boolean validRequestDonation(Beneficiary beneficiary,RequestDonation request){
+    double level=0;
+    if(request.entity instanceof Material){
+      if(beneficiary.noPersons==1){
+          BQuanityTest(request,level1);
+          return true;
+                                  }
+      else if(beneficiary.noPersons>=5){
+          BQuanityTest(request,level3);
+          return true;
+                                        }
+      else {
+         BQuanityTest(request,level2);
+         return true;
+            }
+    }
+        else return true;
+    }
+    public boolean OQuanityTest(RequestDonation request){
+    for(RequestDonation thisRD : rdEntities){
+     if(get(thisRD)==get(request)){
+     if(thisRD.quantity==request.quantity){return true;}
+     break;
+                                  } 
+                                            }
+    }
+    public void BQuanityTest(RequestDonation request,double level){
+    for(ReceivedList thisRE : rdEntities){
+              if(get(thisRE)==get(request)){
+              if(request.quantity + thisRE.quantity>=level){}
+              break;
+                                            }
+                                          }
+    }
+}
+
+
