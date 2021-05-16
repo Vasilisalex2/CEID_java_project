@@ -16,5 +16,17 @@ public class Material extends Entity{
     {
         return "Material \n One member families:" + level1 + "\nTwo-four member families: " + level2 + "\nFive or more member families: " + level3;
     }
+    public double getLevel1()
+    {
+        return level1;
+    }
+    public double getLevel2()
+    {
+        return level2;
+    }
+    public double getLevel3()
+    {
+        return level3;
+    }
     
 }
