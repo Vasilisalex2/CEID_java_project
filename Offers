@@ -1,9 +1,0 @@
-public class Offers extends RequestDonationList
-{
-    public void commit(){
-    for(RequestDonation thisOffer : rdEntities){
-    currentDonations.add(thisOffer);
-    }
-    reset();
-    }
-}
